@@ -1,9 +1,11 @@
-Docker image for Online Labs
+Flynn image for Online Labs
 ====================================
 
-Scripts to build a Docker image for Online Labs
+Scripts to build a Flynn image for Online Labs
 
 This image is built using [Image Tools](https://github.com/online-labs/image-tools) and depends on the official [Ubuntu](https://github.com/online-labs/image-ubuntu) image.
+
+Based on Online Labs' [official Docker image](https://github.com/online-labs/image-app-docker).
 
 ---
 
@@ -23,12 +25,3 @@ Build and write the image to /dev/nbd1 (see [documentation](https://doc.cloud.on
     $ make install
 
 Full list of commands available at: [online-labs/image-tools](https://github.com/online-labs/image-tools/tree/master#commands)
-
----
-
-Links
------
-
-- [Community: Docker Support](https://community.cloud.online.net/t/official-docker-support/374?u=manfred)
-- [Community: Getting started with Docker on C1 (armhf)](https://community.cloud.online.net/t/getting-started-docker-on-c1-armhf/383?u=manfred)
-- [Online Labs Blog - Docker on C1](https://blog.cloud.online.net/2014/10/27/docker-on-c1/)

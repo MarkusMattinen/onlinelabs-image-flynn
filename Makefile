@@ -1,10 +1,10 @@
 DOCKER_NAMESPACE =	markusma/
-NAME =			armhf-onlinelabs-image-docker
-VERSION =		1.5.0-ubuntu_15.04
-VERSION_ALIASES =	1.5.0 ubuntu_15.04 latest
-TITLE =			Docker 1.5.0 on Ubuntu Vivid
-DESCRIPTION =		Docker 1.5.0 on Ubuntu Vivid
-SOURCE_URL =		https://github.com/MarkusMattinen/onlinelabs-image-docker
+NAME =			armhf-onlinelabs-image-flynn
+VERSION =		2015-03-19.0
+VERSION_ALIASES =	ubuntu_15.04 latest
+TITLE =			Flynn on Vivid
+DESCRIPTION =		Flynn on Ubuntu Vivid for Online Labs
+SOURCE_URL =		https://github.com/MarkusMattinen/onlinelabs-image-flynn
 S3_URL =		s3://markusma-armhf-onlinelabs-images
 
 
