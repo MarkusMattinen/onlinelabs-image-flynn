@@ -1,21 +1,17 @@
 
 ## -*- docker-image-name: "armbuild/ocs-app-docker:vivid" -*-
 FROM armbuild/ocs-distrib-ubuntu:vivid
-MAINTAINER Online Labs <opensource@ocs.online.net> (@online_en)
+MAINTAINER Markus Mattinen <docker@gamma.fi>
 
 
 # Prepare rootfs for image-builder
 RUN /usr/local/sbin/builder-enter
 
 
-# Install packages
+# Upgrade packages
 RUN apt-get -q update &&                   \
     apt-get --force-yes -y -qq upgrade &&  \
-    apt-get --force-yes install -y -q      \
-        bridge-utils                       \
-        fig                                \
-        python-setuptools                  \
-    && apt-get clean
+    apt-get clean
 
 
 # Install Docker dependencies
@@ -28,25 +24,8 @@ RUN wget http://ftp.fr.debian.org/debian/pool/main/d/docker.io/docker.io_1.5.0~d
  && rm -f /tmp/docker.deb
 
 
-# Install Pipework
-RUN wget -qO /usr/local/bin/pipework https://raw.githubusercontent.com/jpetazzo/pipework/master/pipework && \
-    chmod +x /usr/local/bin/pipework
-
-
-# Install Gosu
-RUN wget -qO /usr/local/bin/gosu https://github.com/tianon/gosu/releases/download/1.2/gosu-armhf && \
-    chmod +x /usr/local/bin/gosu
-
-
-# Install Docker Compose
-RUN easy_install -U pip \
- && pip install docker-compose
-
-
 # Patch rootfs
 ADD ./patches/etc/ /etc/
-ADD ./patches/usr/bin/ /usr/bin/
-ADD ./patches/usr/local/ /usr/local/
 
 
 # Clean rootfs from image-builder
